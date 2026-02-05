@@ -8,8 +8,13 @@ const opening = document.getElementById("opening");
 const invitation = document.getElementById("invitation");
 const music = document.getElementById("bgMusic");
 
+music.volume = 0.8;
+
 openBtn.addEventListener("click", () => {
   opening.classList.remove("active");
   invitation.classList.add("active");
-  music.play();
+
+  music.currentTime = 0;
+  music.play().catch(() => {});
 });
+
